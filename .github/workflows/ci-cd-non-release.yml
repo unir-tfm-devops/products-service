@@ -1,0 +1,20 @@
+name: "CI/CD (Non-Release)"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  ci-cd:
+    name: CI/CD
+    uses: unir-tfm-devops/reusable-github-actions/.github/workflows/ci-cd-non-release.yml@main
+    with:
+      image-repo-name: "spring-boot-template"
+      app-name: "spring-boot-template"
+    secrets: inherit
