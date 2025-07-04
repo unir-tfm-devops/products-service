@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "spring-boot-template.fullname" . }}
+  name: {{ include "products-service.fullname" . }}
   labels:
-    {{- include "spring-boot-template.labels" . | nindent 4 }}
+    {{- include "products-service.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "spring-boot-template.selectorLabels" . | nindent 6 }}
+      {{- include "products-service.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "spring-boot-template.selectorLabels" . | nindent 8 }}
+        {{- include "products-service.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: {{ include "spring-boot-template.name" . }}
+        - name: {{ include "products-service.name" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

@@ -1,4 +1,4 @@
-# Spring Boot Template
+# Products Service
 
 [![Java](https://img.shields.io/badge/Java-24-orange.svg)](https://openjdk.org/projects/jdk/24/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
@@ -34,7 +34,7 @@ A comprehensive template for building production-ready REST APIs using Java 24 a
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd spring-boot-template
+   cd products-service
    ```
 
 2. **Build and run with Docker Compose**
@@ -71,7 +71,7 @@ A comprehensive template for building production-ready REST APIs using Java 24 a
 ## 🏗️ Project Structure
 
 ```
-spring-boot-template/
+products-service/
 ├── src/
 │   ├── main/java/com/unir/template/
 │   │   ├── config/          # Configuration classes
@@ -166,7 +166,7 @@ For complete API documentation with examples, schemas, and interactive testing, 
 ### Build the Docker image
 ```bash
 mvn clean package
-docker build -t spring-boot-template .
+docker build -t products-service .
 ```
 
 ### Run with Docker
@@ -175,7 +175,7 @@ docker run -p 8080:8080 \
   -e DB_URL=jdbc:postgresql://host.docker.internal:5432/template_db \
   -e DB_USERNAME=postgres \
   -e DB_PASSWORD=postgres \
-  spring-boot-template
+  products-service
 ```
 
 ## ☸️ Kubernetes Deployment
@@ -185,18 +185,18 @@ docker run -p 8080:8080 \
 1. **Update the image repository in `helm/values.yaml`**
    ```yaml
    image:
-     repository: your-dockerhub-username/spring-boot-template
+     repository: your-dockerhub-username/products-service
      tag: latest
    ```
 
 2. **Deploy to Kubernetes**
    ```bash
-   helm install spring-boot-template ./helm
+   helm install products-service ./helm
    ```
 
 3. **Access the application**
    ```bash
-   kubectl port-forward svc/spring-boot-template 8080:80
+   kubectl port-forward svc/products-service 8080:80
    ```
 
 ### Helm Values
@@ -227,7 +227,7 @@ The main configuration is in `src/main/resources/application.yml`:
 ```yaml
 spring:
   application:
-    name: spring-boot-template
+    name: products-service
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/template_db}
     username: ${DB_USERNAME:postgres}

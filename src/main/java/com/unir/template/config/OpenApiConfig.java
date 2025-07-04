@@ -18,7 +18,7 @@ public class OpenApiConfig {
     return new OpenAPI()
         .info(
             new Info()
-                .title("Spring Boot Template")
+                .title("Products Service")
                 .description(
                     "A comprehensive REST API template built with Spring Boot 3.5.0 and Java 24. "
                         + "This template provides a solid foundation for building production-ready REST APIs "
@@ -28,7 +28,7 @@ public class OpenApiConfig {
                     new Contact()
                         .name("Alvaro Rodriguez Gonzalez")
                         .email("alvaro.rodriguezgonzalez@gmail.com")
-                        .url("https://github.com/unir-tfm-devops/spring-boot-template"))
+                        .url("https://github.com/unir-tfm-devops/products-service"))
                 .license(
                     new License().name("MIT License").url("https://opensource.org/licenses/MIT")))
         .servers(

@@ -15,6 +15,6 @@ jobs:
     name: CI/CD
     uses: unir-tfm-devops/reusable-github-actions/.github/workflows/ci-cd-non-release.yml@main
     with:
-      image-repo-name: "spring-boot-template"
-      app-name: "spring-boot-template"
+      image-repo-name: "products-service"
+      app-name: "products-service"
     secrets: inherit

@@ -10,7 +10,7 @@
   </parent>
 
   <groupId>com.unir</groupId>
-  <artifactId>spring-boot-template</artifactId>
+  <artifactId>products-service</artifactId>
   <version>${revision}</version>
   <name>template</name>
   <description>Template for building REST APIs using Spring Boot</description>

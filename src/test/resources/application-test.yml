@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-boot-template-test
+    name: products-service-test
 
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml

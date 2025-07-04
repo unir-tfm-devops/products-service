@@ -1,8 +1,8 @@
 # -- Override the name of the chart
-nameOverride: "spring-boot-template"
+nameOverride: "products-service"
 
 # -- Override the full name of the chart
-fullnameOverride: "spring-boot-template"
+fullnameOverride: "products-service"
 
 # -- Number of replicas to deploy
 replicaCount: 1
@@ -10,7 +10,7 @@ replicaCount: 1
 # -- Image configuration
 image:
   # -- Docker image repository
-  repository: 703671900078.dkr.ecr.us-east-1.amazonaws.com/spring-boot-template
+  repository: 703671900078.dkr.ecr.us-east-1.amazonaws.com/products-service
   # -- Docker image tag
   tag: 0.0.0
   # -- Docker image pull policy
@@ -41,17 +41,17 @@ resources:
 # -- Environment variables configuration
 env:
   # -- Database URL for PostgreSQL connection
-  DB_URL: "jdbc:postgresql://unir-tfm-postgres-test.c0li4ko84rxt.us-east-1.rds.amazonaws.com:5432/spring-boot-template-test"
+  DB_URL: "jdbc:postgresql://unir-tfm-postgres-test.c0li4ko84rxt.us-east-1.rds.amazonaws.com:5432/products-service-test"
   # -- Database username
-  DB_USERNAME: "spring-boot-template-test"
+  DB_USERNAME: "products-service-test"
 
 # -- Secret configuration for sensitive data
 secrets:
   # -- Enable Kubernetes secrets for sensitive data
   enabled: true
   # -- Name of the Kubernetes secret
-  secretName: "spring-boot-template-secret"
+  secretName: "products-service-secret"
   data:
     # -- Database password
-    DB_PASSWORD: "spring-boot-template-test"
+    DB_PASSWORD: "products-service-test"
 
